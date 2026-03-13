@@ -53,12 +53,13 @@ export function computeBB(
   const lower: number[] = new Array(src.length).fill(NaN);
 
   for (let i = length - 1; i < src.length; i++) {
-    // Calculate standard deviation
     let sumSq = 0;
     for (let j = i - length + 1; j <= i; j++) {
       const diff = src[j] - sma[i];
       sumSq += diff * diff;
     }
+    // Population std dev (÷N, not ÷N−1): matches TradingView and Pine Script BB.
+    // Use this divisor when computing reference values for unit tests.
     const sd = Math.sqrt(sumSq / length);
     upper[i] = sma[i] + stdDev * sd;
     lower[i] = sma[i] - stdDev * sd;
@@ -518,11 +519,8 @@ function BBSettingsModal({ open, onClose, settings, onApply }: BBSettingsModalPr
             </div>
           ) : (
             <div className="flex flex-col gap-[16px]">
-              {/* Basis */}
               {renderLineRow("Basis", "showBasis", "basisColor", "basisLineWidth", "basisLineStyle", "basis")}
-              {/* Upper Band */}
               {renderLineRow("Upper Band", "showUpper", "upperColor", "upperLineWidth", "upperLineStyle", "upper")}
-              {/* Lower Band */}
               {renderLineRow("Lower Band", "showLower", "lowerColor", "lowerLineWidth", "lowerLineStyle", "lower")}
 
               {/* Background */}
@@ -545,7 +543,6 @@ function BBSettingsModal({ open, onClose, settings, onApply }: BBSettingsModalPr
                 </div>
                 <label className="relative w-[28px] h-[28px] rounded border border-[#efeff4] cursor-pointer overflow-hidden">
                   <div className="absolute inset-[3px] rounded-sm" style={{ backgroundColor: local.backgroundColor, opacity: 0.3 }}>
-                    {/* Checkered pattern to indicate transparency */}
                     <svg width="22" height="22" viewBox="0 0 22 22" className="absolute inset-0 opacity-30">
                       <rect x="0" y="0" width="11" height="11" fill="#ccc" />
                       <rect x="11" y="11" width="11" height="11" fill="#ccc" />
