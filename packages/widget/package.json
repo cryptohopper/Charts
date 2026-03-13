@@ -1,0 +1,36 @@
+{
+  "name": "@hopcharts/widget",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "main": "dist/hopcharts-widget.iife.js",
+  "exports": {
+    "./custom-element": "./dist/hopcharts-widget.iife.js",
+    "./iframe": {
+      "types": "./dist/iframe.d.ts",
+      "import": "./dist/iframe.js"
+    }
+  },
+  "scripts": {
+    "build": "vite build && vite build --config vite.iframe.config.ts",
+    "build:widget": "vite build",
+    "build:iframe": "vite build --config vite.iframe.config.ts",
+    "dev": "vite build --watch",
+    "lint": "eslint src --ext .ts,.tsx"
+  },
+  "dependencies": {
+    "@hopcharts/core": "*",
+    "@hopcharts/chart": "*",
+    "react": "^19",
+    "react-dom": "^19"
+  },
+  "devDependencies": {
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^4",
+    "@tailwindcss/vite": "^4",
+    "tailwindcss": "^4",
+    "vite": "^6",
+    "vite-plugin-dts": "^4"
+  }
+}

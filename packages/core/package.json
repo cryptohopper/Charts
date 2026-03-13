@@ -1,0 +1,29 @@
+{
+  "name": "@hopcharts/core",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "dev": "tsc --project tsconfig.json --watch",
+    "lint": "eslint src --ext .ts"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5",
+    "idb-keyval": "^6",
+    "immer": "^11.1.4",
+    "lightweight-charts": "^5",
+    "zustand": "^5"
+  },
+  "peerDependencies": {
+    "react": "^18 || ^19"
+  }
+}

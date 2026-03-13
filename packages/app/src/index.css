@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* ── Hopcharts custom tokens ── */
+  --hc-page-bg: #f8f8ff;
+  --hc-surface: #ffffff;
+  --hc-surface-hover: #f8f8ff;
+  --hc-surface-active: #f0f0f5;
+  --hc-border: #efeff4;
+  --hc-border-strong: #babac1;
+  --hc-text: #1f1f1f;
+  --hc-text-secondary: #8e8e93;
+  --hc-text-muted: #babac1;
+  --hc-accent: #00b1c7;
+  --hc-accent-bg: #dcf5f7;
+  --hc-green: #09977e;
+  --hc-red: #f26d60;
+  --hc-chart-bg: #ffffff;
+  --hc-chart-grid: #efeff4;
+  --hc-chart-grid-text: #8e8e93;
+  --hc-chart-crosshair: #babac1;
+  --hc-tooltip-bg: #1f1f1f;
+  --hc-tooltip-text: #ffffff;
+  --hc-modal-overlay: rgba(58, 62, 71, 0.5);
+  --hc-modal-bg: #ffffff;
+  --hc-modal-header: #f8f8ff;
+  --hc-shadow: 1px 8px 40px rgba(67, 67, 67, 0.12);
+  --hc-icon-stroke: #1F1F1F;
+  --hc-input-bg: #ffffff;
+  --hc-input-border: #efeff4;
+  --hc-hover-bg: #f8f8ff;
+  --hc-selected-bg: rgba(220, 245, 247, 0.4);
+  --hc-kbd-bg: #f8f8ff;
+}
+
+.dark {
+  /* ── Hopcharts dark tokens (petrol/teal) ── */
+  --hc-page-bg: #12181A;
+  --hc-surface: #1A2426;
+  --hc-surface-hover: #26353A;
+  --hc-surface-active: #2F4045;
+  --hc-border: #26353A;
+  --hc-border-strong: #3A4F55;
+  --hc-text: #F7FCFD;
+  --hc-text-secondary: #94A3B8;
+  --hc-text-muted: #5A7A85;
+  --hc-accent: #00B2C8;
+  --hc-accent-bg: rgba(0, 178, 200, 0.12);
+  --hc-green: #10CD72;
+  --hc-red: #EF5350;
+  --hc-chart-bg: #12181A;
+  --hc-chart-grid: #26353A;
+  --hc-chart-grid-text: #94A3B8;
+  --hc-chart-crosshair: #5A7A85;
+  --hc-tooltip-bg: #26353A;
+  --hc-tooltip-text: #F7FCFD;
+  --hc-modal-overlay: rgba(0, 0, 0, 0.6);
+  --hc-modal-bg: #1A2426;
+  --hc-modal-header: #12181A;
+  --hc-shadow: 1px 8px 40px rgba(0, 0, 0, 0.35);
+  --hc-icon-stroke: #F7FCFD;
+  --hc-input-bg: #12181A;
+  --hc-input-border: #26353A;
+  --hc-hover-bg: #26353A;
+  --hc-selected-bg: rgba(0, 178, 200, 0.1);
+  --hc-kbd-bg: #26353A;
+}
+
+body {
+  margin: 0;
+  background-color: var(--hc-page-bg);
+  color: var(--hc-text);
+  font-family: 'Source Sans 3', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+/* Safe area padding for mobile */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

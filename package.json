@@ -1,0 +1,23 @@
+{
+  "name": "hopcharts",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "test": "turbo test"
+  },
+  "devDependencies": {
+    "turbo": "^2",
+    "typescript": "^5.7",
+    "eslint": "^8.57",
+    "@typescript-eslint/eslint-plugin": "^7",
+    "@typescript-eslint/parser": "^7",
+    "eslint-config-prettier": "^9",
+    "prettier": "^3"
+  },
+  "packageManager": "npm@10.9.4"
+}
