@@ -101,6 +101,15 @@ export type {
 export { useTheme, useScanUsage } from './hooks/index.js';
 export type { ScanUsage } from './hooks/index.js';
 
+// Drawings
+export {
+  DrawingSerializationError,
+  serializeDrawing,
+  serializeDrawings,
+  deserializeDrawing,
+  deserializeDrawings,
+} from './drawings/index.js';
+
 // Utils
 export {
   formatPrice,

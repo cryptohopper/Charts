@@ -14,7 +14,8 @@
   "scripts": {
     "build": "tsc --project tsconfig.json",
     "dev": "tsc --project tsconfig.json --watch",
-    "lint": "eslint src --ext .ts"
+    "lint": "eslint src --ext .ts",
+    "test": "vitest run"
   },
   "dependencies": {
     "@tanstack/react-query": "^5",
@@ -25,5 +26,8 @@
   },
   "peerDependencies": {
     "react": "^18 || ^19"
+  },
+  "devDependencies": {
+    "vitest": "^3"
   }
 }
